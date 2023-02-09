@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the stock data
-df = pd.read_csv('ASIANPAINT.csv')
+df = pd.read_csv('ASIANPAINT.csv', sep =",")
 
 # Plot the stock price
 st.line_chart(df.set_index('date')['close'])
