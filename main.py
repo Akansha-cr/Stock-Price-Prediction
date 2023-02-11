@@ -12,9 +12,12 @@ st.write('Upload a CSV file to generate Stock price Prediction:')
 uploaded_file = st.file_uploader('Choose a CSV file', type='csv')
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    selected_column = st.selectbox("Select a numerical column", df.columns)
-    if selected_column:
-        st.line_chart(df[selected_column])
+    if df.empty:
+            st.write("The uploaded file is empty. Please upload a file containing data.")
+    else:
+        selected_column = st.selectbox("Select a numerical column", df.columns)
+        if selected_column:
+            st.line_chart(df[selected_column])
         
 df = pd.read_csv(uploaded_file)
 # Plot the stock price
