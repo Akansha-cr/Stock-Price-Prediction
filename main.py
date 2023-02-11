@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 st.title('Stock Price Prediction')
+st.markdown("MAKE SURE THE COLUMNS IN CSV ARE LABELLED AS 'DATE','Open', 'High', 'Low','Close', for no errors")
 st.write('Upload a CSV file to generate Stock price Prediction:')
 
 uploaded_file = st.file_uploader('Choose a CSV file', type='csv')
