@@ -12,7 +12,7 @@ st.write('Upload a CSV file to generate Stock price Prediction:')
 uploaded_file = st.file_uploader('Choose a CSV file', type='csv')
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-        st.line_chart(df)
+    st.line_chart(df)
         
 df = pd.read_csv(uploaded_file)
 # Plot the stock price
