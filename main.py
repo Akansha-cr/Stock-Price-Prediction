@@ -19,7 +19,7 @@ if uploaded_file is not None:
         if selected_column:
             st.line_chart(df[selected_column])
         
-df = pd.read_csv(uploaded_file)
+#df = pd.read_csv(uploaded_file)
 # Plot the stock price
 st.line_chart(df.set_index('Date')['Close'])
 
