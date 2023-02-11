@@ -5,8 +5,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the stock data
-df = pd.read_csv('ASIANPAINT.csv', sep =",")
+#df = pd.read_csv('ASIANPAINT.csv', sep =",")
+st.title('Stock Price Prediction')
+st.write('Upload a CSV file to generate Stock price Prediction:')
 
+uploaded_file = st.file_uploader('Choose a CSV file', type='csv')
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+        st.line_chart(df)
+        
+df = pd.read_csv(uploaded_file)
 # Plot the stock price
 st.line_chart(df.set_index('Date')['Close'])
 
