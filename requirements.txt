@@ -4,3 +4,4 @@ sklearn
 matplotlib
 streamlit
 seaborn
+scikit-learn
