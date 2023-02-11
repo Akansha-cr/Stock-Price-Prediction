@@ -31,7 +31,7 @@ else:
         high_price = st.number_input('High price')
         low_price = st.number_input('Low price')
         plt.scatter(df['Open'], df['Close'])
-        st.pyplot()
+        plt.show()
         
         # Make the prediction
         if st.button('Predict'):
