@@ -8,12 +8,12 @@ import seaborn as sns
 df = pd.read_csv('ASIANPAINT.csv', sep =",")
 
 # Plot the stock price
-st.line_chart(df.set_index('date')['close'])
+st.line_chart(df.set_index('Date')['Close'])
 
 # Train the model
 from sklearn.linear_model import LinearRegression
 model = LinearRegression()
-model.fit(df[['open', 'high', 'low']], df['close'])
+model.fit(df[['Open', 'High', 'Low']], df['Close'])
 # Predict the stock price
 def predict_price(model, data):
     return model.predict(data)
