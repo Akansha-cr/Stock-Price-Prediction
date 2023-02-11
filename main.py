@@ -30,6 +30,16 @@ else:
         open_price = st.number_input('Open price')
         high_price = st.number_input('High price')
         low_price = st.number_input('Low price')
+        
+        #plot the linear regression
+        open_price = np.array(df['Open']).reshape(-1, 1)
+        prediction = model.predict(open_price)
+        plt.plot(open_price, prediction, color='red')
+        plt.xlabel('Open price')
+        plt.ylabel('Close price')
+
+        # Show the plot
+        st.pyplot()
 
         # Make the prediction
         if st.button('Predict'):
